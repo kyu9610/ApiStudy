@@ -40,4 +40,20 @@ public class BoardController {
         User user = userRepository.findById(1).get();
         return new Response("성공","글 작성 성공",boardService.write(boardDto,user));
     }
+
+    // 게시글 수정
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/boards/update/{id}")
+    public Response edit(@RequestBody BoardDto boardDto, @PathVariable("id") Integer id){
+        User user = userRepository.findById(1).get(); // 임시로
+        return new Response("성공","글 수정 성공",boardService.update(id,boardDto));
+    }
+
+    // 게시글 삭제
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/boards/delete/{id}")
+    public Response delete(@PathVariable("id") Integer id){
+        boardService.delete(id);
+        return new Response("성공","글 삭제 성공",null);
+    }
 }
