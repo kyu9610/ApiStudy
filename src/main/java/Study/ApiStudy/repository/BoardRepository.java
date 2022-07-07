@@ -1,6 +1,6 @@
-package repository;
+package Study.ApiStudy.repository;
 
-import entity.Board;
+import Study.ApiStudy.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

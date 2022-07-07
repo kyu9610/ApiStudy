@@ -1,4 +1,4 @@
-package entity;
+package Study.ApiStudy.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

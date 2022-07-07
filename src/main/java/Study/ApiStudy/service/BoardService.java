@@ -1,12 +1,12 @@
-package service;
+package Study.ApiStudy.service;
 
-import dto.BoardDto;
-import entity.Board;
-import entity.User;
+import Study.ApiStudy.dto.BoardDto;
+import Study.ApiStudy.entity.Board;
+import Study.ApiStudy.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.BoardRepository;
+import Study.ApiStudy.repository.BoardRepository;
 
 import java.util.ArrayList;
 import java.util.List;

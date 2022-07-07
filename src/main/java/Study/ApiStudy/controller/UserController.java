@@ -1,20 +1,23 @@
-package controller;
+package Study.ApiStudy.controller;
 
-import dto.RegisterDto;
+import Study.ApiStudy.dto.RegisterDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import response.Response;
-import service.UserService;
+import org.springframework.web.bind.annotation.*;
+import Study.ApiStudy.response.Response;
+import Study.ApiStudy.service.UserService;
 
 @Controller
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/")
+    public Response<?> home(){
+        return new Response<>("true","조회 성공",null);
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/users")
@@ -29,7 +32,7 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/auth")
+    @PostMapping("/auth")
     public Response<?> register(@RequestBody RegisterDto registerDto){
         return new Response<>("true","가입 성공",userService.register(registerDto));
     }

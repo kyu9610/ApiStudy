@@ -1,4 +1,4 @@
-package response;
+package Study.ApiStudy.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

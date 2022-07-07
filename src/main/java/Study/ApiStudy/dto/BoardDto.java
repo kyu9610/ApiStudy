@@ -1,6 +1,6 @@
-package dto;
+package Study.ApiStudy.dto;
 
-import entity.Board;
+import Study.ApiStudy.entity.Board;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

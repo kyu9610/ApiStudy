@@ -1,4 +1,4 @@
-package dto;
+package Study.ApiStudy.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

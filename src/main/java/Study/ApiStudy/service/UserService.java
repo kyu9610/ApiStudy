@@ -1,10 +1,10 @@
-package service;
+package Study.ApiStudy.service;
 
-import dto.RegisterDto;
-import entity.User;
+import Study.ApiStudy.dto.RegisterDto;
+import Study.ApiStudy.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
+import Study.ApiStudy.repository.UserRepository;
 
 import java.util.List;
 

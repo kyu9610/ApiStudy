@@ -1,4 +1,4 @@
-package entity;
+package Study.ApiStudy.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

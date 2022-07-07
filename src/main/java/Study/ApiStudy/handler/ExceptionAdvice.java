@@ -1,10 +1,10 @@
-package handler;
+package Study.ApiStudy.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import response.Response;
+import Study.ApiStudy.response.Response;
 
 @RestControllerAdvice
 public class ExceptionAdvice {
