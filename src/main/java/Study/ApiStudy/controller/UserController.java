@@ -3,12 +3,11 @@ package Study.ApiStudy.controller;
 import Study.ApiStudy.dto.RegisterDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import Study.ApiStudy.response.Response;
 import Study.ApiStudy.service.UserService;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;

@@ -4,14 +4,13 @@ import Study.ApiStudy.dto.BoardDto;
 import Study.ApiStudy.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import Study.ApiStudy.repository.UserRepository;
 import Study.ApiStudy.response.Response;
 import Study.ApiStudy.service.BoardService;
 
 @RequiredArgsConstructor
-@Controller
+@RestController
 public class BoardController {
     private final BoardService boardService;
     private final UserRepository userRepository;
