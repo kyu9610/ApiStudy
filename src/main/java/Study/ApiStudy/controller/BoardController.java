@@ -2,6 +2,7 @@ package Study.ApiStudy.controller;
 
 import Study.ApiStudy.dto.BoardDto;
 import Study.ApiStudy.entity.User;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ public class BoardController {
     private final UserRepository userRepository;
 
     // 전체 게시글 조회
+    @ApiOperation(value = "전체 게시글 보기", notes = "전체 게시글을 조회한다.")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/boards")
     public Response getBoards(){
@@ -23,6 +25,7 @@ public class BoardController {
     }
 
     // 개별 게시글 조회
+    @ApiOperation(value = "개별 게시글 보기", notes = "개별 게시글을 조회한다.")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/board/{id}")
     public Response getBoard(@PathVariable("id") Integer id){
@@ -30,6 +33,7 @@ public class BoardController {
     }
 
     // 게시글 작성
+    @ApiOperation(value = "게시글 작성", notes = "게시글을 작성한다.")
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/board/write")
     public Response write(@RequestBody BoardDto boardDto){
@@ -38,6 +42,7 @@ public class BoardController {
     }
 
     // 게시글 수정
+    @ApiOperation(value = "게시글 수정", notes = "게시글을 수정한다.")
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/board/update/{id}")
     public Response edit(@RequestBody BoardDto boardDto, @PathVariable("id") Integer id){
@@ -46,6 +51,7 @@ public class BoardController {
     }
 
     // 게시글 삭제
+    @ApiOperation(value = "게시글 삭제", notes = "게시글을 삭제한다")
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/board/delete/{id}")
     public Response delete(@PathVariable("id") Integer id){
