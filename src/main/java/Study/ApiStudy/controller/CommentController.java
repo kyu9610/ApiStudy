@@ -28,7 +28,7 @@ public class CommentController {
     // 게시글에 달린 댓글 모두 불러오기
     @ApiOperation(value = "댓글 불러오기",notes = "게시글에 달린 댓글을 모두 불러온다.")
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/comments/{boardId")
+    @GetMapping("/comments/{boardId}")
     public Response getComments(@PathVariable("boardId") Integer boardId){
         return new Response("성공","댓글을 불러왔습니다.",commentService.getComments(boardId));
     }
