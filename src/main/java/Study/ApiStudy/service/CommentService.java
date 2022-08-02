@@ -37,6 +37,16 @@ public class CommentService {
         return commentDto.toDto(comment);
     }
 
+    // 댓글 불러오기(1개)
+    @Transactional(readOnly = true)
+    public CommentDto getComment(int boardId){
+        Comment comment = commentRepository.findById(boardId).orElseThrow(()->{
+            return new IllegalArgumentException("댓글이 존재하지 않습니다.");
+        });
+
+        return CommentDto.toDto(comment);
+    }
+
     // 글에 해당하는 전체 댓글 불러오기
     @Transactional(readOnly = true)
     public List<CommentDto> getComments(int boardId){

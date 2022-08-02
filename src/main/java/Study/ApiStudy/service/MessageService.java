@@ -37,6 +37,15 @@ public class MessageService {
     }
 
     @Transactional(readOnly = true)
+    public MessageDto findMessageById(int id){
+        Message message = messageRepository.findById(id).orElseThrow(()->{
+            return new IllegalArgumentException("메시지를 찾을 수 없습니다.");
+        });
+
+        return MessageDto.toDto(message);
+    }
+
+    @Transactional(readOnly = true)
     public List<MessageDto> receivedMessage(User user){
         List<Message> messages = messageRepository.findAllByReceiver(user);
         List<MessageDto> messageDtos = new ArrayList<>();
